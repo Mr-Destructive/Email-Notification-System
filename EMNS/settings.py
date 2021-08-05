@@ -38,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'api',
     'user',
+    'mail',
+    
     'crispy_forms',
     'rest_framework',
 ]
@@ -133,6 +136,8 @@ STATICFILES_DIRS = (
 #STATIC_STORAGE = 'django.contrib.static.storage.StaticFilesStorage' # new
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/templates/' 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

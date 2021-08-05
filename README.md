@@ -6,7 +6,7 @@
 
 - Clone the repository from your account
 
-`git clone https://github.com/USERNAME/mail-Notification-System`
+`git clone https://github.com/USERNAME/Email-Notification-System`
 
 This will create a clone of the repository in your local machine.
 
