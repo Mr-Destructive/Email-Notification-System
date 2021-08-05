@@ -1,0 +1,159 @@
+#subject{
+    position: absolute;
+    width: 258px;
+    height: 80px;
+    left: 200px;
+    top: 273px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 29px;
+    
+    color: #FFFFFF;
+
+    color: #FFFFFF;
+}
+input[type=text] {
+    font-size: 18px;
+    color: white;
+  }
+
+textarea[type=text] {
+    font-size: 15px;
+    color: white;
+  }
+#subjectfield {
+    background-color: #2F303A;
+    position: absolute;
+width: 684px;
+height: 62px;
+left: 322px;
+top: 265px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+}
+#messageBody{
+    background-color: #2F303A;
+    position: absolute;
+width: 745px;
+height: 220px;
+left: 322px;
+top: 362px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+
+}
+#recipientlabel{
+    
+    text-align:center;	
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 29px;
+    
+    
+    position: absolute;
+width: 250px;
+height: 68px;
+left: 322px;
+top: 617px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+
+}
+/*
+#file{
+    position: absolute;
+width: 309px;
+height: 68px;
+left: 322px;
+top: 617px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+}
+*/
+
+.attachment{
+    position: absolute;
+width: 75px;
+height: 68px;
+border-radius: 12px;
+left: 80%;
+top: 617px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+#time{
+    position: absolute;
+width: 128px;
+height: 34px;
+left: 741px;
+top: 617px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+}
+#timesubmit{
+    position: absolute;
+width: 108px;
+height: 25px;
+left: 754px;
+top: 660px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+}
+
+#date{
+    position: absolute;
+width: 145px;
+height: 68px;
+left: 925px;
+top: 617px;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.logo{
+    position: absolute;
+    width: 339px;
+    height: 90px;
+    left: 43px;
+    top: 64px;
+    
+    background: url(download.png);
+    border-radius: 2px;
+}
+#send{
+    background-color: #2F303A;
+
+    position: absolute;
+width: 161px;
+height: 57px;
+left: 1074px;
+top: 744px;
+font-size: 25px;
+color: #FFFFFF;
+
+border: 1px solid #1762A7;
+box-sizing: border-box;
+border-radius: 10px;
+}

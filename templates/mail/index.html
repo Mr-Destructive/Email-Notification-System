@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block body %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'mail/style.css' %}">
+        <form action="results.html" method="GET" enctype="multipart/form-data">
+          <!-- Subject -->
+
+            <div>
+              <label id="subject" for="name">Subject</label>
+              <input id ="subjectfield" type="text" name="name" id="name" required>
+          </div>
+         <!-- message main body -->
+
+          <div>
+            <label id="messageBody" for="name">Subject</label>
+            <label id="messageBody" for="name">Body</label>
+            <textarea id ="messageBody" type="text" name="name" id="name" required></textarea>
+        </div>
+
+        <!-- Recipient list -->
+          <label > Recipient list
+		  <input type="email" id ="recipientlabel" placeholder="Recipient Mails" multiple />
+		  </label>
+
+          <label for="upload" id="file"> 
+	  	<input type="file" id="upload" multiple hidden />
+		  <img src="{% static 'img/attachment.jpeg' %}" class="attachment" alt="attachment">
+		  </label>
+
+        <!-- Time -->
+
+        <form action="/action_page.php">
+          <input id= "time" type="time" id="appt" name="appt">
+          <input id= "timesubmit" type="submit">
+        </form>
+
+        <!-- Date -->
+        <div>
+          
+          <input type="date" name="date" id="date">
+        </div>
+
+        <!-- Send Button -->
+        <div>
+        <button id="send" type="submit">Send</button>
+
+
+        </form>
+{% endblock body %}
