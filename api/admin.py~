@@ -3,3 +3,4 @@ from .models import  ScheduledMail
 
 # Register your models here.
 admin.site.register(ScheduledMail)
+admin.site.register(MailRecipient)

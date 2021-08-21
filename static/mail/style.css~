@@ -141,7 +141,7 @@ border-radius: 10px;
 #time{
     position: absolute;
 width: 128px;
-height: 64px;
+height: 34px;
 left: 741px;
 top: 617px;
 

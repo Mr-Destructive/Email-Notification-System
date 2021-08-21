@@ -8,7 +8,7 @@
           <!-- Subject -->
 
             <div>
-              <label id="subject" for="name">Subject: </label>
+              <label id="subject" for="name">Subject</label>
               <input id ="subjectfield" type="text" name="subject" id="name" required>
           </div>
 
