@@ -1,0 +1,27 @@
+body
+{
+	padding: 0;
+	margin: 0;
+	background-color:rgb(94, 94, 94);
+}
+
+h1{
+	text-align:center;
+	position:relative;
+}
+
+nav
+{
+	background-color:black;
+	color:white;
+	font-weight:900;
+}
+
+.mail-view
+{
+	position:absolute;
+	top:40%;
+	left:40%;
+	font-size:30px;
+	color:white;
+}

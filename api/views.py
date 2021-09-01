@@ -1,22 +1,21 @@
 from django.shortcuts import render
-from rest_framework import generics, status
-from rest_framework.views import APIView 
-from rest_framework.generics import CreateAPIView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
 from django.http import JsonResponse
-
-from .serializers import ScheduledMailSerializer
+import json
 from .models import ScheduledMail
+from .forms import MailForm
 
 # Create your views here.
 
-class Create_Mail(CreateAPIView):
-    serializer_class = ScheduledMailSerializer
-    def post(self, request, format = None):
-        serializer = ScheduledMailSerializer(data=request.data)
-        if(serializer.is_valid()):
-            serializer.save()
-            
-        return Response(serializer.data)    
+class AddMailView(LoginRequiredMixin, CreateView):
+    model = ScheduledMail
+    form_class = MailForm
+    template_name = 'mail/add.html'
+    
+    def form_valid(self, form):
+        form.instance.sender = self.request.user.email
+        return super(AddMailView, self).form_valid(form)
+
 

@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.core.mail import EmailMessage
 from datetime import datetime    
 from django.contrib.postgres.fields import ArrayField
+from django.urls import reverse
 # Create your models here.
 
 
@@ -14,7 +15,7 @@ class ScheduledMail(models.Model):
     send_on = models.DateTimeField(default = datetime.now(),blank=True)
     recipients_list = ArrayField(models.EmailField(max_length = 255))
 
-    attachment_file = models.FileField(blank=True)
+    attachment_file = models.FileField(blank=True, null=True)
 
     @classmethod
     def get_today_mail(cls):
@@ -32,6 +33,11 @@ class ScheduledMail(models.Model):
         mail_msg.content_subtype = 'html'
 
         mail_msg.send()
+
+
+    def get_absolute_url(self):  
+        return reverse('mail', args=(str(self.id),))
+
 
     def __str__(self):
         return self.subject
