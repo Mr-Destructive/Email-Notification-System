@@ -1,5 +1,5 @@
 from django import forms
-from.models import ScheduledMail
+from .models import ScheduledMail
 
 class MailForm(forms.ModelForm):
     class Meta:
@@ -23,7 +23,6 @@ class MailForm(forms.ModelForm):
                     }),
                 'attachment_file': forms.FileInput(attrs={
                     'class': 'form-control',
-
                     }),
 
                 }

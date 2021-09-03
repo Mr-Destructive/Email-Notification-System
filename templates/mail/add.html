@@ -2,18 +2,20 @@
 {% block body %}
 {% load static %}
 
-<link rel="stylesheet" href="{% static 'css/mail/style.css' %}">
-{% if user.is_authenticated %}
-	<h3 id="sender">Sender: {{ request.user.email }}</h3>
-	<div class="mb-3">
-		<form method="POST">
-			{% csrf_token %}
-			{{ form.as_p }}
-			<button id="send">Post</button>
-		</form>
+	<link rel="stylesheet" href="{% static 'css/mail/style.css' %}">
+	{% if user.is_authenticated %}
+	<div id="sender">
+		<h3 >Sender:</h3>
+		<h3 id="email-sender">{{ request.user.email }}</h3>
 	</div>
-		{% else %}
-<h3>Please<a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a></h3>
-{% endif %}
+		<div class="mb-3">
+			<form method="POST">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<button id="send">Send Mail</button>
+			</form>
+		</div>
+	{% else %}
+		<h3>Please<a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a></h3>
+	{% endif %}
 {% endblock body %}
-

@@ -1,142 +1,27 @@
+:root
+{
+	--form-input-col: black;
+	--form-input-back: #FFCCCC; 
+	--form-gradient: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 22px rgba(214, 149, 149, 0.72);
+}
+
 #sender{
     position:absolute;
-    left: 270px;
+    left: 20%;
     top: 100px;    
-    font-family: Roboto;
     font-style: normal;
     font-weight: 500;
     font-size: 30px;
     line-height: 29px;
     
-    color: yellow;
+    color: black;
     }
-/*
-#sendid{
-
-    position:absolute;
-    left: 320px;
-    top: 200px;    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 29px;
-    
-    color: #1aff00;
-    }
-
-#subject{
-    position: absolute;
-    width: 258px;
-    height: 80px;
-    left: 200px;
-    top: 273px;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 29px;
-    
-    color: #FFFFFF;
+#email-sender
+{
+    color:#494561;
+    font-weight:900;
+    padding-bottom:20%;
 }
-
-#body{
-    position: absolute;
-    width: 258px;
-    height: 80px;
-    left: 200px;
-    top: 360px;
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 29px;
-    
-    color: #FFFFFF;
-    }
-input[type=text] {
-    font-size: 18px;
-    color: white;
-  }
-
-textarea[type=text] {
-    font-size: 15px;
-    color: white;
-  }
-#subjectfield {
-    background-color: #2F303A;
-    position: absolute;
-    width: 684px;
-    height: 62px;
-    left: 322px;
-    top: 265px;
-
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-#messageBody{
-    background-color: #2F303A;
-    position: absolute;
-    width: 745px;
-    height: 220px;
-    left: 322px;
-    top: 362px;
-    
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-}
-#recipientlabel{
-    
-    text-align:center;	
-    
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 29px;
-    
-    
-    position: absolute;
-    width: 250px;
-    height: 68px;
-    left: 322px;
-    top: 617px;
-    
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-
-}
-#file{
-    position: absolute;
-    width: 309px;
-    height: 68px;
-    left: 322px;
-    top: 617px;
-    
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-
-.attachment{
-    position: absolute;
-    width: 75px;
-    height: 68px;
-    border-radius: 12px;
-    left: 80%;
-    top: 617px;
-    
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-*/
 .time{
     position: absolute;
     width: 128px;
@@ -148,78 +33,49 @@ textarea[type=text] {
     box-sizing: border-box;
     border-radius: 10px;
 }
-/*
-#timesubmit{
-    position: absolute;
-    width: 108px;
-    height: 25px;
-    left: 754px;
-    top: 660px;
-    
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-
-#date{
-    position: absolute;
-    width: 145px;
-    height: 68px;
-    left: 925px;
-    top: 617px;
-
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-.logo{
-    position: absolute;
-    width: 339px;
-    height: 90px;
-    left: 43px;
-    top: 64px;
-    
-    background: url(download.png);
-    border-radius: 2px;
-}
-#send{
-    background-color: #2F303A;
-
-    position: absolute;
-    width: 161px;
-    height: 57px;
-    left: 1074px;
-    top: 744px;
-    font-size: 25px;
-    color: #FFFFFF;
-
-    border: 1px solid #1762A7;
-    box-sizing: border-box;
-    border-radius: 10px;
-}
-*/
-
 .mb-3
 {
-	top:25%;
+	top:35%;
 	position:absolute;
 	font-size: 30px;
 	width:55%;
 	left:20%;
-	color:yellow;
+	color:black;
 }
 .mb-3 > form > p > input,
 .mb-3 > form > p > textarea,
 .form-control:focus
 
 {
-	color:white;
+	color:black;
+	font-weight:800;
 	background-color: #2F303A;
+	background: var(--form-input-back);
+	box-shadow: var(--form-gradient);
+	border-radius: 25px;
 }
-
 .mail-view
 {
 	position:absolute;
 	top:40%;
 	left:40%;
+}
+
+#send, #send:focus, #send:hover
+{
+	position: absolute;
+	width: 178px;
+	height: 70px;
+
+	background: #FE8181;
+	box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 20px rgba(189, 131, 131, 0.72);
+	border-radius: 25px;
+	outline:none;
+	box-shadow: none;
+}
+#send:hover
+{
+	background-color:black;
+	color:white;
+	transition:0.5s;
 }

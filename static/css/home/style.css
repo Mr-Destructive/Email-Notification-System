@@ -2,7 +2,9 @@ body
 {
 	padding: 0;
 	margin: 0;
-	background-color:rgb(94, 94, 94);
+	background-color:#FFCCCC;
+	box-shadow:inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 22px rgba(214, 149, 149, 0.72);
+
 }
 
 h1{
@@ -23,5 +25,5 @@ nav
 	top:40%;
 	left:40%;
 	font-size:30px;
-	color:white;
+	color:black;
 }

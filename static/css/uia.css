@@ -1,0 +1,234 @@
+
+/* Sender: rohan@gmail.com text */
+
+
+position: absolute;
+width: 490px;
+height: 57px;
+left: 39px;
+top: 112px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 28px;
+line-height: 33px;
+
+color: #000000;
+
+
+/* Subject text */
+
+
+position: absolute;
+width: 111px;
+height: 27px;
+left: 60px;
+top: 196px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 29px;
+
+color: #070707;
+
+
+/* subject_field */
+
+
+position: absolute;
+width: 688px;
+height: 66px;
+left: 180px;
+top: 186px;
+
+background: #FFCCCC;
+box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 22px rgba(214, 149, 149, 0.72);
+border-radius: 25px;
+
+
+/* Body text */
+
+
+position: absolute;
+width: 64px;
+height: 29px;
+left: 88px;
+top: 285px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 29px;
+
+color: #000000;
+
+
+
+
+/* body field */
+
+
+position: absolute;
+width: 717px;
+height: 219px;
+left: 180px;
+top: 269px;
+
+background: #FFCCCC;
+box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 22px rgba(189, 131, 131, 0.72);
+border-radius: 25px;
+
+
+
+
+
+/* Send on text */
+
+
+position: absolute;
+width: 99px;
+height: 29px;
+left: 54px;
+top: 524px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 29px;
+
+color: #000000;
+
+/* send on field */
+
+
+position: absolute;
+width: 506px;
+height: 69px;
+left: 180px;
+top: 512px;
+
+background: #FFCCCC;
+box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 22px rgba(189, 131, 131, 0.72);
+border-radius: 25px;
+
+
+/* Recipients list text */
+
+
+position: absolute;
+width: 134px;
+height: 23px;
+left: 21px;
+top: 623px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+
+color: #000000;
+
+
+
+
+
+/* Recipients list field */
+
+
+position: absolute;
+width: 506px;
+height: 64px;
+left: 180px;
+top: 605px;
+
+background: #FFCCCC;
+box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 22px rgba(189, 131, 131, 0.72);
+border-radius: 25px;
+
+
+
+
+/* Attachment file text */
+
+
+position: absolute;
+width: 148px;
+height: 23px;
+left: 11px;
+top: 716px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+line-height: 23px;
+
+color: #000000;
+
+
+
+
+/* attachment field */
+
+
+position: absolute;
+width: 428px;
+height: 69px;
+left: 180px;
+top: 693px;
+
+background: #FFCCCC;
+box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 22px rgba(189, 131, 131, 0.72);
+border-radius: 25px;
+
+
+/* outer Send Main Button */
+
+
+position: absolute;
+width: 202px;
+height: 92px;
+left: 910px;
+top: 682px;
+
+background: #FA7F7F;
+box-shadow: -12px -12px 24px rgba(255, 255, 255, 0.25), 10px 10px 20px rgba(189, 131, 131, 0.72);
+border-radius: 30px;
+
+
+/* inner Send Main Button */
+
+
+position: absolute;
+width: 178px;
+height: 70px;
+left: 922px;
+top: 693px;
+
+background: #FE8181;
+box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 20px rgba(189, 131, 131, 0.72);
+border-radius: 25px;
+
+
+/* Send Mail text */
+
+
+position: absolute;
+width: 112px;
+height: 24px;
+left: 955px;
+top: 715px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 25px;
+line-height: 29px;
+
+color: #000000;

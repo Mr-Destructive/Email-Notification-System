@@ -57,6 +57,7 @@
 
           {% block body %}
 				<div class="mail-view">
+	  <h3> Mail Sent from {{ request.user.email }} </h3>
 	  <ul>
 	  	{% for mail in object_list %}
 			{% if request.user.email == mail.sender %}

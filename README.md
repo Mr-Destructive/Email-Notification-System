@@ -18,7 +18,7 @@ This will create a clone of the repository in your local machine.
 
 For windows: `env\Scripts\activate`
 
-For Linux\macOS: `source env\bin\activate.sh`
+For Linux\macOS: `source env/bin/activate.sh`
 
 This should set up the virtual environment on your local folder.
 
