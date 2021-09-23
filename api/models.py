@@ -15,7 +15,7 @@ class ScheduledMail(models.Model):
     send_on = models.DateTimeField(default = datetime.now(),blank=True)
     recipients_list = ArrayField(models.EmailField(max_length = 255))
 
-    attachment_file = models.FileField(blank=True, null=True)
+    attachment_file = models.FileField(blank=True, null=True, upload_to='mail/uploads/')
 
     @classmethod
     def get_today_mail(cls):
@@ -41,3 +41,6 @@ class ScheduledMail(models.Model):
 
     def __str__(self):
         return self.subject
+
+    class Meta:
+        ordering = ['-id', ]

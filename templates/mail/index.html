@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{% static 'css/mail/style.css' %}">
 	{% if user.is_authenticated %}
 	{% if request.user.email == object.sender %}
+	<!--
 	<div class="mail-view">
 		
 		<h3>{{ object.subject }}</h3>
@@ -18,6 +19,17 @@
 		
 		<p> Time: {{ object.send_on }}</p> 
 		
+	</div>
+	-->
+	<div class="content-table">
+	  <h3 id="sub">{{ object.subject }}</h3>
+		<ul>
+			{% for mails in object.recipients_list %}
+			<li>{{ mails }}</li>
+				{% endfor %}
+		</ul>
+  	<p>{{ object.send_on }}</p>
+	<p>{{ object.body }}</p>
 	</div>
 	{% else %}
 <h3>Please<a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a></h3>

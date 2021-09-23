@@ -135,6 +135,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static/"),
 )
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '/')
+MEDIA_URL = '/mail/uploads/'
 #STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
 #STATIC_STORAGE = 'django.contrib.static.storage.StaticFilesStorage' # new
 # Default primary key field type
@@ -148,3 +152,4 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+

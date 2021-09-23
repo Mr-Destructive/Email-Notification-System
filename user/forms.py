@@ -5,6 +5,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
+    gapps_key = forms.PasswordInput()
 
     class Meta:
         model = User

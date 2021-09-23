@@ -56,6 +56,7 @@
     </main>
 
           {% block body %}
+	  <!--
 				<div class="mail-view">
 	  <h3> Mail Sent from {{ request.user.email }} </h3>
 	  <ul>
@@ -66,6 +67,37 @@
 	  	{% endfor %}
 	  </ul>
 				</div>
+	  -->
+    <table class="content-table">
+        <thead>
+          <tr>
+		  <th> </th>
+            <th>Subject</th>
+            <th>To</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+	  	{% for mail in object_list %}
+          <tr>
+		  <td>
+			<img src="{% static 'img/mail.png' %}" width="60px">
+		  </td>
+		  <a href="{% url 'mail' pk=mail.pk %}">
+		  <td id="sub"><a href="{% url 'mail' pk=mail.pk %}">
+				  {{ mail.subject }}</a></td>
+		  <td>
+		<ul class="email-ids">
+			{% for mails in mail.recipients_list %}
+			<li>{{ mails }}</li>
+				{% endfor %}
+		</ul>
+</td>
+		  <td>{{ mail.send_on }}</td>
+          </tr>
+	  {% endfor %}
+        </tbody>
+      </table>
 	  {% endblock %}
 
     <!-- Optional JavaScript -->

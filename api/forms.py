@@ -15,14 +15,14 @@ class MailForm(forms.ModelForm):
                     'class': 'form-control',
                     'max-length': '40000',
                     }),
-                'recipients_list': forms.EmailInput(attrs={
+                'recipients_list': forms.TextInput(attrs={
                     'class': 'form-control',
                     }),
                 'send_on': forms.DateTimeInput(attrs={
                     'class': 'input-group date form-control ',
                     }),
                 'attachment_file': forms.FileInput(attrs={
-                    'class': 'form-control',
+                    'class':'form-control',
                     }),
 
                 }
