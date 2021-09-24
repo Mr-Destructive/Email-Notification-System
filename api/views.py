@@ -30,7 +30,7 @@ class AddMailView(LoginRequiredMixin, CreateView):
         port = 465
         sender_email = self.request.user.email
         reciever_email = form.instance.recipients_list
-        password = "tpjayorkfjdxkvup"
+        password = self.request.user.profile.gapps_key
         body = form.instance.body
         subject = form.instance.subject
 

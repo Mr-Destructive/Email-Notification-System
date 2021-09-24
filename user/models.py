@@ -1,10 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
-
-class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+class Profile(AbstractUser):
     gapps_key = models.CharField(max_length=16, default='')
 
-    def __str__(self):
-        return f'{self.user.username} Profile'
+    REQUIRED_FIELDS = ['gapps_key', 'email']
+
