@@ -17,6 +17,7 @@ import smtplib, ssl
 import time, os
 import json
 
+from django.utils import timezone
 # Create your views here.
 
 class AddMailView(LoginRequiredMixin, CreateView):
@@ -30,7 +31,7 @@ class AddMailView(LoginRequiredMixin, CreateView):
         port = 465
         sender_email = self.request.user.email
         reciever_email = form.instance.recipients_list
-        password = self.request.user.profile.gapps_key
+        password = self.request.user.gapps_key
         body = form.instance.body
         subject = form.instance.subject
 
@@ -41,29 +42,31 @@ class AddMailView(LoginRequiredMixin, CreateView):
         
         message.attach(MIMEText(body, "plain"))
         
-        #filename = self.request.FILES['attachment_file'] 
+        file = form.instance.attachment_file 
  
-        #if request.FILES['attachment_file']:
-        #    with open(filename, "rb") as attachment:
-        #        part = MIMEBase("application", "octet-stream")
-        #        part.set_payload(attachment.read())
+        if file:
+            with open(file, "rb") as attachment:
+                part = MIMEBase("application", "octet-stream")
+                part.set_payload(attachment.read())
 
-        #    encoders.encode_base64(part)
+            encoders.encode_base64(part)
 
-        #    part.add_header(
-        #        "Content-Disposition",
-        #        f"attachment; filename= {filename}",
-        #    )
+            part.add_header(
+                "Content-Disposition",
+                f"attachment; filename= {filename}",
+            )
 
-        #    message.attach(part)
-        #    message.attach(filename.name, filename.read(), filename.content_type)
+            message.attach(part)
+            message.attach(file.name, file.read(), file.content_type)
 
-        text = message.as_string()
+        message = message.as_string()
 
+        while(timezone.now() <= form.instance.send_on):
+            continue
         context = ssl.create_default_context()
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
             server.login(sender_email, password)
-            server.sendmail(sender_email, reciever_email, text)
+            server.sendmail(sender_email, reciever_email, message)
         return super(AddMailView, self).form_valid(form)
 
 
