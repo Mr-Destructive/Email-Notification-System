@@ -45,27 +45,27 @@ Pre-requisites:
    3. Password of the database if already there, then write the password in the [](src\EMNS\settings.py)
    4. Setup the Virtual Environment:
 
-	- Python should be installed along with pip. 
+- Python should be installed along with pip. 
 
-	`pip install virtualenv`
+`pip install virtualenv`
 
-	`virtualenv env`
+`virtualenv env`
 
-	 `env\Scripts\activate`
+ `env\Scripts\activate`
 
-	This should set up the virtual environment on your local folder.
+This should set up the virtual environment on your local folder.
 
-	`pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
-	This will install all the required dependencies and libraries in python
+This will install all the required dependencies and libraries in python
 
-	Make migrations for the database:
- 
-	`python manage.py makemigrations`
+Make migrations for the database:
 
-	`pyton manage.py migrate`
+`python manage.py makemigrations`
 
-	Finally run the server `python manage.py runserver`
+`pyton manage.py migrate`
+
+Finally run the server `python manage.py runserver`
 
 
 </details>
@@ -78,27 +78,27 @@ Pre-requisites:
    3. Password of the database if already there, then write the password in the [](src\EMNS\settings.py)
    4. Setup the Virtual Environment:
 
-	- Python should be installed along with pip. 
+- Python should be installed along with pip. 
 
-	`pip install virtualenv`
+`pip install virtualenv`
 
-	`virtualenv env`
+`virtualenv env`
 
-	 `source env/bin/activate`
+ `source env/bin/activate`
 
-	This should set up the virtual environment on your local folder.
+This should set up the virtual environment on your local folder.
 
-	`pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
-	This will install all the required dependencies and libraries in python
+This will install all the required dependencies and libraries in python
 
-	Make migrations for the database:
- 
-	`python manage.py makemigrations`
+Make migrations for the database:
 
-	`pyton manage.py migrate`
+`python manage.py makemigrations`
 
-	Finally run the server `python manage.py runserver`
+`pyton manage.py migrate`
+
+Finally run the server `python manage.py runserver`
 
 </details>
 
@@ -110,27 +110,27 @@ Pre-requisites:
    3. Password of the database if already there, then write the password in the [](src\EMNS\settings.py)
    4. Setup the Virtual Environment:
 
-	- Python should be installed along with pip. 
+- Python should be installed along with pip. 
 
-	`pip install virtualenv`
+`pip install virtualenv`
 
-	`virtualenv env`
+`virtualenv env`
 
-	 `source env/bin/activate`
+ `source env/bin/activate`
 
-	This should set up the virtual environment on your local folder.
+This should set up the virtual environment on your local folder.
 
-	`pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
-	This will install all the required dependencies and libraries in python
+This will install all the required dependencies and libraries in python
 
-	Make migrations for the database:
- 
-	`python manage.py makemigrations`
+Make migrations for the database:
 
-	`pyton manage.py migrate`
+`python manage.py makemigrations`
 
-	Finally run the server `python manage.py runserver`
+`pyton manage.py migrate`
+
+Finally run the server `python manage.py runserver`
 
 </details>
 
@@ -146,35 +146,35 @@ Pre-requisites:
 
    1. Make Admin account
  	
-	For creating admin, locate to the project folder src/ directory, activate the virtual environment:
-        
-        - For Linux/macOS : `source env/bin/activate.sh`
+For creating admin, locate to the project folder src/ directory, activate the virtual environment:
 
-        - For Windows: `env\Script\activate` 
+- For Linux/macOS : `source env/bin/activate.sh`
 
-	Create a super user using the command, `python manage.py createsuperuser`.
+- For Windows: `env\Script\activate` 
 
-	Add your credentials like email, name, password in there and there is the Admin created.
+Create a super user using the command, `python manage.py createsuperuser`.
 
-	If this doesn't work, use `winpty python manage.py createsuperuser`.
+Add your credentials like email, name, password in there and there is the Admin created.
 
-	Navigate to the `127.0.0.1:8000/admin/` and enter the same credentials as used for creating the admin.
+If this doesn't work, use `winpty python manage.py createsuperuser`.
+
+Navigate to the `127.0.0.1:8000/admin/` and enter the same credentials as used for creating the admin.
 
    2. Google App Password
         
-     	This should be a must for sending mails from this app, before creating a account, plaease create a app password on Google.
-	
-	The sender's email must be a Gmail account.  The 2FA should be enabled on this account. You will have to create an app on your Gmail id that will handle the email sending, permissions, and the rest of the stuff for you. It's quite simple to do that, visit the [Google App Password page](https://myaccount.google.com/apppasswords). 
+This should be a must for sending mails from this app, before creating a account, plaease create a app password on Google.
 
-	1. Log in with your credentials from the above link
-	2. Create an App  category-> Other give it any name(call it anything you like eg. djangomail, emns)
-	3. Now copy the password and store it securely somewhere.	
+The sender's email must be a Gmail account.  The 2FA should be enabled on this account. You will have to create an app on your Gmail id that will handle the email sending, permissions, and the rest of the stuff for you. It's quite simple to do that, visit the [Google App Password page](https://myaccount.google.com/apppasswords). 
+
+1. Log in with your credentials from the above link
+2. Create an App  category-> Other give it any name(call it anything you like eg. djangomail, emns)
+3. Now copy the password and store it securely somewhere.	
 
    3. Login
  
-	Creating Account with `Email`, `Username`, `Password` and `Google App Password`.
- 
-        Once signed/logged in, that same email will be used for sending emails, it avoids spaming and mismatched email delivery. 
+Creating Account with `Email`, `Username`, `Password` and `Google App Password`.
+
+Once signed/logged in, that same email will be used for sending emails, it avoids spaming and mismatched email delivery. 
  
 
 </details>
