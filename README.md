@@ -1,30 +1,153 @@
-# Email Notification System
-### A Webpage to send mails to recepients at allotted time.
 
-## Use the project locally:
-- Fork the repository to your github account
+<h1>Email Notification System</h1>
+A Webpage to send mails to recepients at allotted time.
 
-- Clone the repository from your account
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Objectives](#objectives)
+- [Objectives completed](#objectives-completed)
+- [Usage](#usage)
+  - [Installation](#installation)
+  - [Navigation](#navigation)
+- [Team](#team)
+  - [Mentors:](#mentors)
+  - [Members:](#members)
 
-`git clone https://github.com/USERNAME/Email-Notification-System`
+## Objectives
+* Primary Objectives of project
+* Maybe secondary too
+* Maybe a tertiary change
 
-This will create a clone of the repository in your local machine.
+## Objectives completed 
+  1. objectives that have been completed
 
-- Python should be installed along with pip. 
 
-`pip install virtualenv`
+## Usage
 
-`virtualenv env`
+### Installation 
+If anything you want to write about Installation, any prerequisites or something similar
 
-For windows: `env\Scripts\activate`
+<details>
+    <summary><b>Windows</b></summary>
 
-For Linux\macOS: `source env/bin/activate.sh`
+   1. Clone the repository
+  <p><code>git clone https://github.com/CvyuhOrg/G3-Email-Notification </code></p>
+   2. Continue steps
+  <ul>
+<li>Python should be installed along with pip.</li>
+</ul>
+  <p>
+    <code>pip install virtualenv</code>
+  </p>
+  <p>
+    <code>virtualenv env</code>
+  </p>
+  <p>
+    <code>env\Scripts\activate</code>
+  </p>
+  <p>This should set up the virtual environment on your local folder.
+  </p>
+  <p>
+    <code>pip install -r requirements.txt</code>
+  </p>
+  <p>This will install all the required dependencies and libraries in python</p>
+  <p>Finally run the server 
+  <code>python manage.py runserver</code>
+</p>
+</details>
+  
+</details>
+<details>
+    <summary><b>Mac</b></summary>
 
-This should set up the virtual environment on your local folder.
+   1. Clone the repository
+   <p><code>git clone https://github.com/CvyuhOrg/G3-Email-Notification </code></p>
+   2. Continue steps
+  
+  <ul>
+<li>Python should be installed along with pip.</li>
+</ul>
+  
+  <p>
+    <code>pip install virtualenv</code>
+  </p>
+  <p>
+    <code>virtualenv env</code>
+  </p>
+  <p>
+    <code>source env/bin/activate</code>
+  </p>
+  <p>
+    <code>virtualenv env</code>
+  </p>
+  <p>This should set up the virtual environment on your local folder.
+  </p>
+  <p>
+    <code>pip install -r requirements.txt</code>
+  </p>
+  <p>This will install all the required dependencies and libraries in python</p>
+  <p>Finally run the server 
+  <code>python manage.py runserver</code>
+</p>
+</details>
 
-`pip install -r requirements.txt`
 
-This will install all the required dependencies and libraries in python
+<details>
+    <summary><b>Ubuntu</b></summary>
 
-Finally run the server `python manage.py runserver`
+   1. Clone the repository
+   <p><code>git clone https://github.com/CvyuhOrg/G3-Email-Notification </code></p>
+   2. Continue steps
+  
+  <ul>
+<li>Python should be installed along with pip.</li>
+</ul>
+  <p>
+    <code>pip install virtualenv</code>
+  </p>  
+  <p>
+    <code>virtualenv env</code>
+  </p>
+  <p>
+    <code>source env/bin/activate</code>
+  </p>
+  <p>
+    <code>virtualenv env</code>
+  </p>
+  <p>This should set up the virtual environment on your local folder.
+  </p>
+  <p>
+    <code>pip install -r requirements.txt</code>
+  </p>
+  <p>This will install all the required dependencies and libraries in python</p>
+  <p>Finally run the server 
+  <code>python manage.py runserver</code>
+</p>
+</details>
+### Navigation
 
+Various components that exist in the navigation
+
+<details>
+    <summary><b>Show instructions</b></summary>
+
+   1. Make Admin account
+   2. Login?
+</details>
+
+
+## Team
+
+### Mentors:
+Irfan Siddavatam ( irfansiddavatam@somaiya.edu )<br>
+Ashwini Dalvi ( ashwinidalvi@somaiya.edu )
+
+### Members:
+| Sr No. | Name          | e-mail                    | git-profile    |
+| ------ | ------------- | ------------------------- | -------------- |
+| 1.     | Meet Gor      | gor.m@somaiya.edu         | Mr-Destructive |
+| 2.     | Parth jaju    | parth.jaju@somaiya.edu    | ParthJaju      |
+| 3.     | Rohan Kumar   | rohan.kumar@somaiya.edu   | rohxn          |
+| 4.     | Govind Patra  | patra.g@somaiya.edu       | Satvik049      |
+| 5.     | Satvik Mishra | satvik.m@somaiya.edu      | Govind416      |
+| 6.     | Hardik Singh  | hardik.singh1@somaiya.edu | HS-pro         |
