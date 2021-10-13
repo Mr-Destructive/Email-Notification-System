@@ -4,7 +4,7 @@ from .models import ScheduledMail
 class MailForm(forms.ModelForm):
     class Meta:
         model = ScheduledMail
-        exclude  = ['sender',]
+        exclude  = ['sender']
 
         widgets = {
                 'subject': forms.TextInput(attrs={
@@ -22,7 +22,6 @@ class MailForm(forms.ModelForm):
                     'class': 'input-group date form-control ',
                     }),
                 'attachment_file': forms.FileInput(attrs={
-                    'class':'form-control',
-                    }),
+                    'class': 'form-control',}),
 
                 }

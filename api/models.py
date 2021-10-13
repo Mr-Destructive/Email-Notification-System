@@ -12,27 +12,10 @@ class ScheduledMail(models.Model):
     sender = models.EmailField(max_length = 255) 
     subject = models.CharField(max_length = 78)
     body = models.CharField(max_length = 40000)
-    send_on = models.DateTimeField(default = datetime.now(),blank=True)
+    send_on = models.DateTimeField(default=datetime.now,blank=False)
     recipients_list = ArrayField(models.EmailField(max_length = 255))
 
     attachment_file = models.FileField(blank=True, null=True, upload_to='mail/uploads/')
-
-    @classmethod
-    def get_today_mail(cls):
-        today = date.today()
-        return cls.objects.filter(send_on__year = today.year, send_on__month = today.month, send_on__day = today.day)
-
-    def send_scheduled_mail(self):
-        recipient_list = list(self.recipients_list.values_list('mail_address', flat = True))
-        mail_msg = EmailMessage(
-                subject = self.subject,
-                body = self.body,
-                from_email = self.sender,
-                to = recipient_list,
-        )
-        mail_msg.content_subtype = 'html'
-
-        mail_msg.send()
 
 
     def get_absolute_url(self):  
@@ -44,3 +27,4 @@ class ScheduledMail(models.Model):
 
     class Meta:
         ordering = ['-id', ]
+

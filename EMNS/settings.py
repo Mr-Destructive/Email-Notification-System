@@ -92,7 +92,16 @@ DATABASES = {
         'HOST': 'localhost',
     }
 }
-
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient"
+        },
+        "KEY_PREFIX": "example"
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -154,3 +163,6 @@ AUTH_USER_MODEL = 'user.Profile'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
+CELERY_BROKER_URL = 'redis-10734.c1.asia-northeast1-1.gce.cloud.redislabs.com:10734'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'

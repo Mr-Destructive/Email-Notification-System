@@ -9,12 +9,57 @@
 		<h3 id="email-sender">{{ request.user.email }}</h3>
 	</div>
 		<div class="mb-3">
-			<form method="POST" enctype="multipart/form_data">
+			<form method="POST" enctype="multipart/form-data" action='.'>
 				{% csrf_token %}
 				{{ form.as_p }}
 				<button id="send">Send Mail<img src="{% static 'img/mailsentbig.png' %}" width="30px" height="30px"></button>
 			</form>
-		</div>
+
+    <form id="myForm">
+        <input type="file" id="csvFile" accept=".csv" hidden="hidden" />
+        <button type="button" id="csvfile">Add a CSV File</button>
+        <div class = 'hem'>
+            <input type="submit" value="Submit" id='subcsv'/>
+            </div>
+
+    </form>
+    <script>
+	    console.log(document.getElementById('id_attachment_file').value)
+	const myForm = document.getElementById("myForm");
+        const csvFile = document.getElementById("csvFile");
+
+	var customTxt = document.getElementById("id_recipients_list");
+		myForm.addEventListener("submit", function (e) {
+		    e.preventDefault();
+		    const input = csvFile.files[0];
+		    const reader = new FileReader();
+
+		    reader.onload = function (e) {
+			const text = e.target.result;
+			customTxt.value=text;
+		    };
+
+		    reader.readAsText(input);
+		});
+	const realFileBtn = document.getElementById("csvFile");
+	const customBtn = document.getElementById("csvfile");
+
+	customBtn.addEventListener("click", function() {
+	  realFileBtn.click();
+	});
+
+	realFileBtn.addEventListener("change", function() {
+	  if (realFileBtn.value) {
+	    customTxt.value= realFileBtn.value.match(
+	      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+	    )[1];
+	  } else {
+	    customTxt.innerHTML = "No file chosen, yet.";
+	  }
+	});
+    </script>
+    
+			</div>
 	{% else %}
 		<h3>Please<a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a></h3>
 	{% endif %}
