@@ -21,7 +21,19 @@ from django.utils import timezone
 from mail.tasks import sendmails
 
 from time import sleep
+from datetime import tzinfo, timedelta, datetime
 
+ZERO = timedelta(0)
+
+class UTC(tzinfo):
+  def utcoffset(self, dt):
+    return ZERO
+  def tzname(self, dt):
+    return "UTC"
+  def dst(self, dt):
+    return ZERO
+
+utc = UTC()
 
 # Create your views here.
 def handle_uploaded_file(f):  
@@ -33,12 +45,15 @@ def handle_uploaded_file(f):
 
 def sendmails(sender_email, reciever_email, password, message, send_time):
     port = 465
-    difference = send_time.timestamp() - datetime.now(timezone.utc).timestamp()
+    now_time = datetime.now().replace(tzinfo=None)
+    difference = (send_time.replace(tzinfo=None) - now_time).total_seconds()
     print(difference)
+    sleep(difference)
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
         server.login(sender_email, password)
-        (server.sendmail(sender_email, reciever_email, message))
+        server.sendmail(sender_email, reciever_email, message)
+
 
 def a_sendmails(sender_email, reciever_email, password, message, send_time):
     difference = send_time - datetime.now(timezone.utc)
@@ -73,10 +88,10 @@ class AddMailView(LoginRequiredMixin, CreateView):
         
 
         file = form.instance.attachment_file
-        handle_uploaded_file(file)            
 
         
         if file:
+            handle_uploaded_file(file)            
             with open(file.name,"rb") as attachment:
                 part = MIMEBase("application", "octet-stream")
                 part.set_payload(attachment.read())
@@ -103,7 +118,7 @@ class AddMailView(LoginRequiredMixin, CreateView):
         loop.run_until_complete(create_tasks_func())
         loop.close()
         '''
-
+        
         sendmails(sender_email, reciever_email, password, message, send_time)
 
         return super(AddMailView, self).form_valid(form)

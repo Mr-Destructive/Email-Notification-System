@@ -166,3 +166,4 @@ LOGIN_URL = 'login'
 CELERY_BROKER_URL = 'redis-10734.c1.asia-northeast1-1.gce.cloud.redislabs.com:10734'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
+
