@@ -5,6 +5,7 @@ from django.core.mail import EmailMessage
 from datetime import datetime    
 from django.contrib.postgres.fields import ArrayField
 from django.urls import reverse
+import os
 # Create your models here.
 
 

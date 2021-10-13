@@ -21,16 +21,25 @@
 		
 	</div>
 	-->
-	<div class="content-table">
-	  <h3 id="sub">{{ object.subject }}</h3>
-		<ul>
+	<div class="mail-view">
+		<br/>	
+	  <h3 id="sub"><img src="{% static 'img/mail.png' %}" width="60px">{{ object.subject }}</h3>
+	  <br/>
+	  <h4 >Recipients list: </h4>
+		<ul class="email-ids">
 			{% for mails in object.recipients_list %}
 			<li>{{ mails }}</li>
 				{% endfor %}
 		</ul>
+	  <br/>
+	  <h4>Sent on: </h4>
   	<p>{{ object.send_on }}</p>
+	  <br/>
+	<h3>Body: </h3>
 	<p>{{ object.body }}</p>
+	{% if mail.attachment_file %}
 	<p>{{ object.attachment_file }}</p>
+	{% endif %}
 	</div>
 	{% else %}
 <h3>Please<a href="{% url 'login' %}">Login</a> or <a href="{% url 'register' %}">Register</a></h3>

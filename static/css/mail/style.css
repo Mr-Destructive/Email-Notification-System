@@ -10,7 +10,7 @@
     top: 100px;    
     font-style: normal;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 25px;
     line-height: 29px;
     
     color: black;
@@ -18,7 +18,7 @@
 #email-sender
 {
     color:#494561;
-    font-weight:900;
+    font-weight:800;
     padding-bottom:20%;
 }
 .time{
@@ -37,7 +37,6 @@
 	top:35%;
 	position:absolute;
 	font-size: 30px;
-	width:55%;
 	left:20%;
 }
 .mb-3 > form > p > input,
@@ -61,20 +60,20 @@
 	font-weight: 900;
 	font-size:110%;
 }
-.mail-view
-{
-	position:absolute;
-	top:40%;
-	left:40%;
-}
 
+
+#id_attachment_file
+{
+	background-color:$FFCCCC;
+}
 #csvfile
 {
-	height:6%;
+	height:8%;
+	width:26%;
 	position:absolute;
 	font-size:75%;
-	top:78%;
-	left:78%;
+	top:75%;
+	left:62%;
 	background: #FE8181;
 	box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 20px rgba(189, 131, 131, 0.72);
 	border-radius: 25px;
@@ -84,10 +83,10 @@
 #subcsv
 {
 	height:6%;
-	position:relative;
+	position:absolute;
 	font-size:75%;
-	top:78%;
-	left:105%;
+	top:77%;
+	left:90%;
 	background: #FE8181;
 	box-shadow: inset -12px -12px 22px rgba(255, 250, 250, 0.25), inset 10px 10px 20px rgba(189, 131, 131, 0.72);
 	border-radius: 25px;

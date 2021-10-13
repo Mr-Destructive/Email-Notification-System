@@ -20,14 +20,14 @@ def sleepy(duration):
     return HttpResponse("Hello")
 
 @shared_task
-def sendmails(sender_email, reciever_email, password, message, send_time):
+def c_sendmails(sender_email, reciever_email, password, message, send_time):
     port = 465
-    #difference = send_time - datetime.now(timezone.utc)
-    sleep(10)
+    now_time = datetime.now().replace(tzinfo=None)
+    difference = (send_time.replace(tzinfo=None) - now_time).total_seconds()
+    sleep(difference)
 
     context = ssl.create_default_context()
     with smtplib.SMTP_SSL("smtp.gmail.com", port, context=context) as server:
         server.login(sender_email, password)
         server.sendmail(sender_email, reciever_email, message)
-    return None
 

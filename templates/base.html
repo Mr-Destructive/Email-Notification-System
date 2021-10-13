@@ -80,6 +80,7 @@
         <tbody>
 	  	{% for mail in object_list %}
           <tr>
+	{% if request.user.email == mail.sender %}
 		  <td>
 			<img src="{% static 'img/mail.png' %}" width="60px">
 		  </td>
@@ -95,6 +96,7 @@
 </td>
 		  <td>{{ mail.send_on }}</td>
           </tr>
+      {% endif %}
 	  {% endfor %}
         </tbody>
       </table>

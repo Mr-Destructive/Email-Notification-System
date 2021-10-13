@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     
     'crispy_forms',
     'rest_framework',
+    'django_crontab',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'EMNS.urls'
@@ -146,13 +148,13 @@ STATICFILES_DIRS = (
 )
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR, '/')
-MEDIA_URL = '/mail/uploads/'
 #STATIC_ROOT  = os.path.join(BASE_DIR, 'static')
 #STATIC_STORAGE = 'django.contrib.static.storage.StaticFilesStorage' # new
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+
+#EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_BACKEND = 'mailer.backend.DbBackend'
 EMAIL_FILE_PATH = '/templates/' 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -163,7 +165,7 @@ AUTH_USER_MODEL = 'user.Profile'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 
-CELERY_BROKER_URL = 'redis-10734.c1.asia-northeast1-1.gce.cloud.redislabs.com:10734'
+CELERY_BROKER_URL = 'amqp://guest**@127.0.0.1:5672'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 

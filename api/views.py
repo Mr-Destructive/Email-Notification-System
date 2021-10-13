@@ -18,30 +18,24 @@ import time, os
 import json
 
 from django.utils import timezone
-from mail.tasks import sendmails
+from mail.tasks import c_sendmails
 
 from time import sleep
 from datetime import tzinfo, timedelta, datetime
+from mail import cron
 
-ZERO = timedelta(0)
-
-class UTC(tzinfo):
-  def utcoffset(self, dt):
-    return ZERO
-  def tzname(self, dt):
-    return "UTC"
-  def dst(self, dt):
-    return ZERO
-
-utc = UTC()
 
 # Create your views here.
 def handle_uploaded_file(f):  
-    destination = 'mail/uploads/'
     with open(f.name, 'wb+') as destination:  
         for chunk in f.chunks():  
             destination.write(chunk)  
             
+
+def datetime_to_cron(dt):
+  # FYI: not all cron implementations accept the final parameter (year)
+  return f"cron({dt.minute} {dt.hour} {dt.day} {dt.month} ? {dt.year})"
+
 
 def sendmails(sender_email, reciever_email, password, message, send_time):
     port = 465
@@ -55,11 +49,6 @@ def sendmails(sender_email, reciever_email, password, message, send_time):
         server.sendmail(sender_email, reciever_email, message)
 
 
-def a_sendmails(sender_email, reciever_email, password, message, send_time):
-    difference = send_time - datetime.now(timezone.utc)
-
-def till_redirect():
-    return redirect('/')
     
 
 class AddMailView(LoginRequiredMixin, CreateView):
@@ -69,6 +58,7 @@ class AddMailView(LoginRequiredMixin, CreateView):
     
     def form_valid(self, form):
         super(AddMailView, self).form_valid(form)
+
         form.instance.sender = self.request.user.email
         send_time = form.instance.send_on
         
@@ -108,6 +98,7 @@ class AddMailView(LoginRequiredMixin, CreateView):
             
         message = message.as_string()
 
+
         '''
         loop = asyncio.new_event_loop()
         async def create_tasks_func():
@@ -120,6 +111,8 @@ class AddMailView(LoginRequiredMixin, CreateView):
         '''
         
         sendmails(sender_email, reciever_email, password, message, send_time)
+        #c_sendmails.delay(sender_email, reciever_email, password, message, send_time)
+
 
         return super(AddMailView, self).form_valid(form)
         
